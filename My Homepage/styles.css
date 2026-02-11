@@ -1,199 +1,123 @@
-/* ================ VARIABLES ================ */
-:root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --accent-blue: #60a5fa;
-  --accent-blue-dark: #3b82f6;
-  --accent-green: #4ade80;
-  --accent-green-dark: #22c55e;
-  --border-color: #334155;
-  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-  --transition: all 0.25s ease;
-  --radius: 16px;
-}
-
-/* ================ BASE ================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ============================================= */
+/* Overall page styling                          */
+/* ============================================= */
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #0f172a;           /* dark slate background */
+  color: #e2e8f0;                      /* light / almost white text for contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
-  padding: 1rem;
 }
 
-/* ================ TYPOGRAPHY ================ */
-h1, h2, h3 {
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-}
+/* ============================================= */
+/* Header                                        */
+/* ============================================= */
 
-h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  color: var(--accent-blue);
-  text-shadow: 0 2px 10px rgba(96, 165, 250, 0.25);
-}
-
-h2 {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  color: var(--accent-green);
-  margin-bottom: 1.25rem;
-  position: relative;
-  display: inline-block;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(to right, var(--accent-green), transparent);
-  border-radius: 3px;
-}
-
-/* ================ HEADER ================ */
 header {
+  background-color: #1e293b;
   text-align: center;
-  padding: 4rem 1rem 3rem;
-  background: linear-gradient(to bottom, var(--bg-secondary), transparent);
-  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 1rem;
+  border-bottom: 3px solid #64748b;
+}
+
+header h1 {
+  margin: 0;
+  color: #60a5fa;                      /* bright blue for name/title */
+  font-size: 2.8rem;
 }
 
 header p {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  margin-top: 0.75rem;
+  margin: 0.5rem 0 0;
+  color: #94a3b8;
+  font-size: 1.2rem;
 }
 
-/* ================ NAVIGATION ================ */
+/* ============================================= */
+/* Navigation                                    */
+/* ============================================= */
+
 nav {
+  background-color: #1e293b;
   text-align: center;
-  padding: 1.5rem 0;
-  background: var(--bg-secondary);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 1rem;
+  border-bottom: 1px solid #334155;
 }
 
 nav a {
-  color: var(--accent-blue);
+  color: #93c5fd;
   text-decoration: none;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  margin: 0 0.5rem;
-  border-radius: var(--radius);
-  transition: var(--transition);
+  margin: 0 1rem;
+  font-weight: 500;
 }
 
-nav a:hover,
-nav a:focus {
-  background: rgba(96, 165, 250, 0.15);
-  color: white;
-  outline: none;
+nav a:hover {
+  color: #60a5fa;
+  text-decoration: underline;
 }
 
-/* ================ MAIN CONTENT ================ */
+/* ============================================= */
+/* Main content sections                         */
+/* ============================================= */
+
 main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 section {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  opacity: 0;
-  transform: translateY(20px);
+  background-color: #1e293b;
+  margin-bottom: 2.5rem;
+  padding: 1.8rem 2rem;
+  
+  /* Fancy borders - non-solid, non-black */
+  border: 3px dashed #4ade80;          /* green dashed border */
+  border-radius: 12px;                 /* rounded corners */
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+section h2 {
+  color: #4ade80;                      /* matching green for headings */
+  margin-top: 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #334155;
 }
 
-section:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
-}
-
-/* Fancy list items */
+/* List styling inside sections */
 section ul {
   list-style: none;
-  display: grid;
-  gap: 1rem;
+  padding-left: 0;
 }
 
-section li a {
-  display: block;
-  padding: 1.2rem 1.5rem;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  color: var(--accent-blue);
+section li {
+  margin: 0.9rem 0;
+}
+
+section a {
+  color: #93c5fd;
   text-decoration: none;
   font-weight: 500;
-  transition: var(--transition);
-  backdrop-filter: blur(4px);
 }
 
-section li a:hover,
-section li a:focus {
-  background: rgba(96, 165, 250, 0.15);
-  border-color: var(--accent-blue);
-  color: white;
-  transform: translateX(8px);
-  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.2);
+section a:hover {
+  color: #60a5fa;
+  text-decoration: underline;
 }
 
-/* ================ FOOTER ================ */
+/* ============================================= */
+/* Footer                                        */
+/* ============================================= */
+
 footer {
+  background-color: #0f172a;
   text-align: center;
-  padding: 3rem 1rem 2rem;
-  color: var(--text-secondary);
+  padding: 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid #334155;
+  color: #94a3b8;
   font-size: 0.95rem;
-  border-top: 1px solid var(--border-color);
-  margin-top: 4rem;
 }
-
-/* ================ RESPONSIVE DESIGN ================ */
-@media (max-width: 768px) {
-  header {
-    padding: 3rem 1rem 2rem;
-  }
-
-  nav {
-    padding: 1rem;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 0.8rem 1.2rem;
-  }
-
-  section {
-    padding: 1.8rem;
-  }
-}
-
-/* ================ SCROLL ANIMATIONS (needs JS) ================ */
-/* Add this small script at bottom of HTML if you want fade-in on scroll */
