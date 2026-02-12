@@ -74,10 +74,10 @@ section {
   padding: 1.8rem 2rem;
   
   /* Fancy borders - non-solid, non-black */
-  border: 3px dashed #4ade80;          /* green dashed border */
-  border-radius: 12px;                 /* rounded corners */
+ /* border: 3px dashed #4ade80;          /* green dashed border */
+ /* border-radius: 12px;                 /* rounded corners */
   
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
 }
 
 section h2 {
