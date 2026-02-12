@@ -1,20 +1,12 @@
-/* ============================================= */
-/* Overall page styling                          */
-/* ============================================= */
-
 body {
-  background-color: #0f172a;           /* dark slate background */
-  color: #e2e8f0;                      /* light / almost white text for contrast */
+  background-color: #0f172a;           
+  color: #e2e8f0;                      
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
-
-/* ============================================= */
-/* Header                                        */
-/* ============================================= */
 
 header {
   background-color: #1e293b;
@@ -25,7 +17,7 @@ header {
 
 header h1 {
   margin: 0;
-  color: #60a5fa;                      /* bright blue for name/title */
+  color: #60a5fa;                      
   font-size: 2.8rem;
 }
 
@@ -34,10 +26,6 @@ header p {
   color: #94a3b8;
   font-size: 1.2rem;
 }
-
-/* ============================================= */
-/* Navigation                                    */
-/* ============================================= */
 
 nav {
   background-color: #1e293b;
@@ -58,10 +46,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ============================================= */
-/* Main content sections                         */
-/* ============================================= */
-
 main {
   max-width: 900px;
   margin: 2rem auto;
@@ -73,21 +57,20 @@ section {
   margin-bottom: 2.5rem;
   padding: 1.8rem 2rem;
   
-  /* Fancy borders - non-solid, non-black */
- /* border: 3px dashed #4ade80;          /* green dashed border */
- /* border-radius: 12px;                 /* rounded corners */
+ /* border: 3px dashed #4ade80;          
+ /* border-radius: 12px;                 
   
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
+ /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
 }
 
 section h2 {
-  color: #4ade80;                      /* matching green for headings */
+  color: #4ade80;                      
   margin-top: 0;
   padding-bottom: 0.6rem;
   border-bottom: 2px solid #334155;
 }
 
-/* List styling inside sections */
+
 section ul {
   list-style: none;
   padding-left: 0;
@@ -107,10 +90,6 @@ section a:hover {
   color: #60a5fa;
   text-decoration: underline;
 }
-
-/* ============================================= */
-/* Footer                                        */
-/* ============================================= */
 
 footer {
   background-color: #0f172a;
