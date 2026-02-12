@@ -11,13 +11,6 @@
     <h1>Edwin Belen Jr</h1>
     <p>Intro to Web Design Portfolio</p>
   </header>
-
-  <nav>
-    <!--<a href="index.html">Home</a> |
-    <a href="#labs">Labs / Chapter Projects</a> |
-    <a href="#homework">Homework</a> |-->
-  </nav>
-
   <main>
     <section id="labs">
       <h2>Labs / Chapter Projects</h2>
@@ -25,7 +18,6 @@
         <li><a href="pgmExplanation.html">Chapter 2 Project</a></li>
         <li><a href="programmingQuotes.html">Chapter 3 Project</a></li>
         <!--<li><a href="lab assignment link">lab assignment title</a></li>-->
-        <!-- Add more chapter projects here as you complete them -->
       </ul>
     </section>
 
@@ -34,8 +26,6 @@
       <ul>
         <li><a href="index.html">Homework 1 - Index Page</a></li>
         <!--<li><a href="HW assignment link">HW assignment title</a></li>-->
-        <!--<li><a href="HW assignment link">HW assignment title</a></li>-->
-        <!-- Add your completed homework assignments here -->
       </ul>
     </section>
   </main>
@@ -43,22 +33,5 @@
   <footer>
     <p>2026 Edwin Belen Jr • Fort Drum, NY</p>
   </footer>
-  <script>
-  const sections = document.querySelectorAll('section');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
 </body>
 </html>
