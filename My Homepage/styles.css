@@ -40,8 +40,7 @@ section {
   
   border: 3px dashed #4ade80;          
   border-radius: 12px;                 
-  
- box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 section h2 {
@@ -58,17 +57,6 @@ section ul {
 
 section li {
   margin: 0.9rem 0;
-}
-
-section a {
-  color: #93c5fd;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-section a:hover {
-  color: #60a5fa;
-  text-decoration: underline;
 }
 
 footer {
