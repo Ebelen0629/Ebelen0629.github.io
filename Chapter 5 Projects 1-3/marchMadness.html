@@ -23,50 +23,59 @@
             border: 4px solid #000;
             padding: 20px;
             text-align: center;
-            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #ffffff;
         }
         .left {
-            font-size: 3em;;
+            font-size: 3em;
             font-weight: bold;
             writing-mode: vertical-rl;
             text-orientation: mixed;
-            background-color: #ffffff;
+            height: 420px;
+        }
+        .right {
+            font-size: 1em;
+            line-height: 1.2em;
+            text-align: center;
+            height: 420px;
         }
         .middle {
             border: 4px solid #000;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
         }
         .middle h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            font-size: 1.6em;
+            margin: 8px 0 10px;
             align-self: center; 
         }
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 2px;
+            gap: 1px;
             background-color: #f8f6f6;
-            padding: 2px;
+            padding: 1px;
             width: 100%;
         }
         .calendar-grid > div {
             background-color: white;
-            padding: 12px;
+            padding: 8px;
             text-align: center;
             font-weight: bold;
+            font-size: 0.95em;
             border: 1px solid #ddd;
+            min-height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .calendar-grid > div.header {
-            background-color: #ffd700;
+            background-color: #ffffff;
             color: black;
-            font-size: 1.1em;
+            font-size: 1em;
+            padding: 8px;
         }
         .calendar-grid > div:nth-child(n+23) {
             background-color: #ffd700;
@@ -74,10 +83,6 @@
         .calendar-grid > div:nth-child(n+39) {
             background-color: transparent;
             border: 1px solid transparent;
-        }
-        .right {
-            font-size: .9em;
-            line-height: 1.4;
         }
     </style>
 </head>
@@ -88,6 +93,7 @@
         <div class="middle">
             <h2>March</h2>
             <div class="calendar-grid">
+                <!-- Day headers -->
                 <div class="header">Sun</div>
                 <div class="header">Mon</div>
                 <div class="header">Tue</div>
@@ -96,15 +102,43 @@
                 <div class="header">Fri</div>
                 <div class="header">Sat</div>
                 
-                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
-                <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
-                <div>29</div><div>30</div><div>31</div>
+                <!-- Dates -->
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
             </div>
         </div>
+
         <div class="right">
-            <strong>Blue Devils</strong><br><br>
+            <strong>Duke<br>Blue Devils</strong><br><br>
             Fight, Fight Blue Devils<br>
             Fight for Duke and the Blue and White<br>
             March on through<br> 
@@ -113,7 +147,7 @@
             Duke is out to win today<br>
             Carolina goodnight<br>
             So turn on the steam team<br>
-            Fight Blue Devils Fight<br>
+            Fight Blue Devils Fight
         </div>
     </div>
 </body>
