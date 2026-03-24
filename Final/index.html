@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EatEasy - Edwin's Food Decider</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f5f0;
+      color: #333;
+    }
+
+    nav    { background: #333; color: white; padding: 1rem; text-align: center; border: 3px solid #222; }
+    header { background: #ff6b35; color: white; padding: 4rem 1rem; text-align: center; border: 3px solid #e65100; }
+    main   { background: #fffaf5; padding: 2rem 1rem; border: 3px solid #ffaa66; }
+    footer { background: #ff6b35; color: #ccc; padding: 2rem; text-align: center; border: 3px solid #111; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .meal-card {
+      background: white;
+      border: 3px dashed #ff6b35;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .meal-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="index.html" style="color:white; margin:0 1rem; text-decoration:none;">Home</a>
+      <a href="quiz.html" style="color:white; margin:0 1rem; text-decoration:none;">Quiz</a>
+      <a href="recipes.html" style="color:white; margin:0 1rem; text-decoration:none;">Recipes</a>
+      <a href="categories.html" style="color:white; margin:0 1rem; text-decoration:none;">Categories</a>
+      <a href="local-eats.html" style="color:white; margin:0 1rem; text-decoration:none;">North Country Spots</a>
+      <a href="contact.html" style="color:white; margin:0 1rem; text-decoration:none;">Contact</a>
+      <a href="about.html" style="color:white; margin:0 1rem; text-decoration:none;">About</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Never Decide Alone What to Eat Again!</h1>
+      <p>EatEasy - Edwin's Food Decider</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+
+      <h2 style="text-align:center;">Sample Meal Ideas</h2>
+
+      <div class="results-grid">
+
+        <div class="meal-card">
+          <img src="https://placehold.co/600x400/png?text=Meal+Image+1" alt="Meal 1" class="meal-img">
+          <h3>Classic Philly Cheesesteak</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quick comfort food with melty cheese.</p>
+        </div>
+
+
+        <div class="meal-card">
+          <img src="https://placehold.co/600x400/png?text=Meal+Image+2" alt="Meal 2" class="meal-img">
+          <h3>Spicy Ramen Bowl</h3>
+          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Warm and spicy.</p>
+        </div>
+
+      </div>
+
+      <p class="note">This is placeholder content. Replace images and text later.</p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 EatEasy - Solving Food Indecision in North Country</p>
+    </div>
+  </footer>
+
+</body>
+</html>
