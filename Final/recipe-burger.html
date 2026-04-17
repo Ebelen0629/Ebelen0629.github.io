@@ -21,7 +21,6 @@
             <a href="quiz.html">Quiz</a>
             <a href="random.html">Random Meal</a>
             <a href="recipes.html">Recipes</a>
-            <a href="local-eats.html">North Country Spots</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -63,22 +62,13 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        const navMenu = document.getElementById("nav-menu");
-        navMenu.classList.toggle("active");
-    }
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            const navMenu = document.getElementById("nav-menu");
-            navMenu.classList.remove("active");
+            document.getElementById("nav-menu").classList.remove("active");
         });
-    });
-    document.addEventListener('click', (e) => {
-        const navMenu = document.getElementById("nav-menu");
-        const toggleBtn = document.getElementById("menu-toggle");
-        if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-            navMenu.classList.remove("active");
-        }
     });
 </script>
 

@@ -18,7 +18,6 @@
             text-align: left;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.2s;
         }
         .option-btn:hover, .option-btn.selected {
             border-color: #ff6b35;
@@ -33,11 +32,10 @@
         <div class="logo">EatEasy</div>
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <div class="nav-links" id="nav-menu">
-            <a href="Final.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="random.html">Random Meal</a>
             <a href="recipes.html">Recipes</a>
-            <a href="local-eats.html">North Country Spots</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -61,6 +59,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Results Section (now leads to random page) -->
+    <div id="results-container" style="display:none; text-align:center;">
+        <h2 style="margin:2rem 0;">Quiz Complete!</h2>
+        <p style="font-size:1.2rem; margin-bottom:2rem;">Let's find you a random meal idea from the North Country.</p>
+        <a href="random.html" class="btn btn-orange" style="font-size:1.3rem; padding:1rem 3rem;">Show Me a Random Meal</a>
+    </div>
 </div>
 
 <footer>
@@ -68,25 +73,14 @@
 </footer>
 
 <script>
-// Quiz Questions
+// Quiz Data
 const questions = [
     { q: "How are you feeling right now?", options: ["Hangry 😡", "Tired 😴", "Chill 😌", "Adventurous 🔥"], key: "mood" },
-    { q: "How much time do you have?", options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook"], key: "time" },
+    { q: "How much time do you have to eat?", options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook a bit"], key: "time" },
     { q: "What are you craving?", options: ["Savory", "Comfort Food", "Pasta", "Something Healthy"], key: "craving" },
     { q: "Any dietary preference?", options: ["No restrictions", "Vegetarian"], key: "diet" }
 ];
 
-// Meal Database with links to recipe pages
-const meals = [
-    { name: "Classic Philly Cheesesteak", file: "recipe-cheesesteak.html", tags: "Quick • Comfort • $$", desc: "Tender beef, melted cheese, peppers & onions on a toasted roll." },
-    { name: "Creamy Garlic Pasta", file: "recipe-pasta.html", tags: "Quick • Comfort • $", desc: "Rich garlic cream sauce with parmesan — a cozy North Country favorite." },
-    { name: "North Country Burger", file: "recipe-burger.html", tags: "Comfort • $$", desc: "Juicy burger with cheese and bacon." },
-    { name: "Pulled Pork Sandwich", file: "recipe-pulledpork.html", tags: "Comfort • $$", desc: "Slow-cooked pulled pork with BBQ sauce." },
-    { name: "Veggie Stir-Fry Bowl", file: "recipe-stirfry.html", tags: "Healthy • Quick • $", desc: "Fresh vegetables stir-fried with rice." },
-    { name: "Breakfast Skillet", file: "recipe-breakfast.html", tags: "Comfort • $", desc: "Eggs, potatoes, sausage & cheese." }
-];
-
-let answers = {};
 let currentQuestion = 0;
 
 function renderQuestion() {
@@ -101,13 +95,12 @@ function renderQuestion() {
     document.getElementById("options").innerHTML = html;
     
     document.getElementById("next-btn").style.display = "none";
-    document.getElementById("progress-bar").style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+    document.getElementById("progress-bar").style.width = `${((currentQuestion)/questions.length)*100}%`;
 }
 
 window.selectOption = function(btn, value) {
     document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
-    answers[questions[currentQuestion].key] = value;
     document.getElementById("next-btn").style.display = "block";
 };
 
@@ -116,20 +109,23 @@ document.getElementById("next-btn").addEventListener("click", () => {
     if (currentQuestion < questions.length) {
         renderQuestion();
     } else {
-        // Pass answers to random page using URL parameters
-        const params = new URLSearchParams(answers);
-        window.location.href = `random.html?${params.toString()}`;
+        document.getElementById("quiz-container").style.display = "none";
+        document.getElementById("results-container").style.display = "block";
     }
 });
 
 // Mobile Menu
-function toggleMenu() {
+document.getElementById("menu-toggle").addEventListener("click", () => {
     document.getElementById("nav-menu").classList.toggle("active");
-}
+});
 
-document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById("nav-menu").classList.remove("active");
+    });
+});
 
-// Start the quiz
+// Start quiz
 renderQuestion();
 </script>
 
