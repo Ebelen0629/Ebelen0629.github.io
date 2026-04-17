@@ -35,7 +35,7 @@
         <div class="nav-links" id="nav-menu">
             <a href="Final.html">Home</a>
             <a href="quiz.html">Quiz</a>
-            <a href="results.html">Results</a>
+            <a href="random.html">random</a>
             <a href="recipes.html">Recipes</a>
             <a href="local-eats.html">North Country Spots</a>
             <a href="about.html">About</a>
@@ -116,9 +116,9 @@ document.getElementById("next-btn").addEventListener("click", () => {
     if (currentQuestion < questions.length) {
         renderQuestion();
     } else {
-        // Pass answers to results page using URL parameters
+        // Pass answers to random page using URL parameters
         const params = new URLSearchParams(answers);
-        window.location.href = `results.html?${params.toString()}`;
+        window.location.href = `random.html?${params.toString()}`;
     }
 });
 

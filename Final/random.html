@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Meal | EatEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">EatEasy</div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="random.html">Random Meal</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="local-eats.html">North Country Spots</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>Feeling Lucky?</h1>
+        <p>Click the button below for a random North Country meal idea!</p>
+    </div>
+</div>
+
+<div class="container" style="text-align: center; max-width: 700px;">
+    <button onclick="getRandomMeal()" class="start-quiz-btn" style="font-size: 1.4rem; padding: 1.2rem 3.5rem;">
+        Give Me a Random Meal
+    </button>
+
+    <div id="random-result" class="card" style="display: none; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <img id="random-image" src="" alt="" style="height: 260px;">
+        <div class="card-content">
+            <h3 id="random-name"></h3>
+            <p id="random-tags" style="margin: 0.8rem 0;"></p>
+            <p id="random-desc"></p>
+            <a id="random-recipe-link" href="#" class="btn btn-orange">View Full Recipe</a>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+        <a href="quiz.html" class="btn btn-orange">Take Quiz Again</a>
+        <a href="recipes.html" class="btn btn-gray" style="margin-left: 1rem;">Browse All Recipes</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
+</footer>
+
+<script>
+// Meal database
+const meals = [
+    {
+        name: "Classic Philly Cheesesteak",
+        tags: "Quick • Comfort • $$",
+        desc: "Tender beef, melted cheese, peppers & onions on a fresh roll.",
+        image: "images/cheesesteak.jpg",
+        file: "recipe-cheesesteak.html"
+    },
+    {
+        name: "Creamy Garlic Pasta",
+        tags: "Quick • Comfort • $",
+        desc: "Rich garlic cream sauce with parmesan — a cozy North Country favorite.",
+        image: "images/pasta.jpg",
+        file: "recipe-pasta.html"
+    },
+    {
+        name: "North Country Burger",
+        tags: "Comfort • $$",
+        desc: "Juicy burger with cheese and bacon.",
+        image: "images/burger.jpg",
+        file: "recipe-burger.html"
+    },
+    {
+        name: "Pulled Pork Sandwich",
+        tags: "Comfort • $$",
+        desc: "Slow-cooked pulled pork with BBQ sauce and coleslaw.",
+        image: "images/pulledpork.jpg",
+        file: "recipe-pulledpork.html"
+    },
+    {
+        name: "Veggie Stir-Fry Bowl",
+        tags: "Healthy • Quick • $",
+        desc: "Fresh vegetables stir-fried with rice and light sauce.",
+        image: "images/stirfry.jpg",
+        file: "recipe-stirfry.html"
+    },
+    {
+        name: "Breakfast Skillet",
+        tags: "Comfort • $",
+        desc: "Eggs, potatoes, sausage & cheese — perfect North Country breakfast.",
+        image: "images/breakfast.jpg",
+        file: "recipe-breakfast.html"
+    }
+];
+
+function getRandomMeal() {
+    const randomIndex = Math.floor(Math.random() * meals.length);
+    const meal = meals[randomIndex];
+
+    document.getElementById("random-result").style.display = "block";
+    document.getElementById("random-image").src = meal.image;
+    document.getElementById("random-name").textContent = meal.name;
+    document.getElementById("random-tags").textContent = meal.tags;
+    document.getElementById("random-desc").textContent = meal.desc;
+    document.getElementById("random-recipe-link").href = meal.file;
+}
+
+// Mobile menu
+document.getElementById("menu-toggle").addEventListener("click", () => {
+    document.getElementById("nav-menu").classList.toggle("active");
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById("nav-menu").classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
