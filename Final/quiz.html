@@ -6,7 +6,12 @@
     <title>Quiz | EatEasy</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .progress { height: 8px; background: #ff6b35; margin-bottom: 2rem; border-radius: 10px; }
+        .progress { 
+            height: 8px; 
+            background: #ff6b35; 
+            margin-bottom: 2rem; 
+            border-radius: 10px; 
+        }
         .option-btn {
             display: block;
             width: 100%;
@@ -19,7 +24,8 @@
             font-size: 1.1rem;
             cursor: pointer;
         }
-        .option-btn:hover, .option-btn.selected {
+        .option-btn:hover, 
+        .option-btn.selected {
             border-color: #ff6b35;
             background: #fffaf5;
         }
@@ -32,7 +38,7 @@
         <div class="logo">EatEasy</div>
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <div class="nav-links" id="nav-menu">
-            <a href="Final.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="random.html">Random Meal</a>
             <a href="recipes.html">Recipes</a>
@@ -55,15 +61,33 @@
                 
                 <div id="options"></div>
                 
-                <button id="next-btn" class="btn btn-orange" style="width:100%; margin-top:2rem; display:none;">Next Question</button>
+                <button id="next-btn" class="btn btn-orange" style="width:100%; margin-top:2rem; display:none;">
+                    Next Question
+                </button>
             </div>
         </div>
     </div>
 
-    <div id="results-container" style="display:none; text-align:center;">
-        <h2 style="margin:2rem 0;">Quiz Complete!</h2>
-        <p style="font-size:1.2rem; margin-bottom:2rem;">Let's find you a random meal idea from the North Country.</p>
-        <a href="random.html" class="btn btn-orange" style="font-size:1.3rem; padding:1rem 3rem;">Show Me a Random Meal</a>
+    <!-- Smart Recommendation Screen -->
+    <div id="recommendation-container" style="display:none; text-align:center;">
+        <h2 style="margin:2rem 0 1rem;">Here's Your Perfect Meal!</h2>
+        
+        <div id="recommended-meal" class="card" style="max-width: 500px; margin: 0 auto;">
+            <img id="meal-image" src="" alt="" style="height: 260px;">
+            <div class="card-content">
+                <h3 id="meal-name"></h3>
+                <p id="meal-tags" style="margin: 0.8rem 0; font-weight: bold;"></p>
+                <p id="meal-desc"></p>
+                <a id="view-recipe-btn" href="#" class="btn btn-orange" style="margin-top: 1.5rem;">
+                    View Full Recipe
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <a href="quiz.html" class="btn btn-gray">Take Quiz Again</a>
+            <a href="random.html" class="btn btn-orange" style="margin-left: 1rem;">Try Random Meal</a>
+        </div>
     </div>
 </div>
 
@@ -72,15 +96,79 @@
 </footer>
 
 <script>
-// Quiz Data
+// Meal database with scoring logic
+const meals = [
+    {
+        name: "Classic Philly Cheesesteak",
+        tags: "Quick • Comfort • $$",
+        desc: "Tender beef, melted cheese, peppers & onions on a fresh roll.",
+        image: "images/cheesesteak.jpg",
+        file: "recipe-cheesesteak.html",
+        mood: ["Hangry"],
+        time: ["Quick"],
+        craving: ["Savory", "Comfort"]
+    },
+    {
+        name: "Creamy Garlic Pasta",
+        tags: "Quick • Comfort • $",
+        desc: "Rich garlic cream sauce with parmesan — a cozy North Country favorite.",
+        image: "images/pasta.jpg",
+        file: "recipe-pasta.html",
+        mood: ["Tired", "Chill"],
+        time: ["Quick", "Normal"],
+        craving: ["Pasta", "Comfort"]
+    },
+    {
+        name: "North Country Burger",
+        tags: "Comfort • $$",
+        desc: "Juicy burger with cheese and bacon.",
+        image: "images/burger.jpg",
+        file: "recipe-burger.html",
+        mood: ["Hangry"],
+        time: ["Quick"],
+        craving: ["Savory", "Comfort"]
+    },
+    {
+        name: "Pulled Pork Sandwich",
+        tags: "Comfort • $$",
+        desc: "Slow-cooked pulled pork with BBQ sauce.",
+        image: "images/pulledpork.jpg",
+        file: "recipe-pulledpork.html",
+        mood: ["Hangry", "Chill"],
+        time: ["Normal"],
+        craving: ["Comfort"]
+    },
+    {
+        name: "Veggie Stir-Fry Bowl",
+        tags: "Healthy • Quick • $",
+        desc: "Fresh vegetables stir-fried with rice and light sauce.",
+        image: "images/stirfry.jpg",
+        file: "recipe-stirfry.html",
+        mood: ["Chill"],
+        time: ["Quick"],
+        craving: ["Healthy"]
+    },
+    {
+        name: "Breakfast Skillet",
+        tags: "Comfort • $",
+        desc: "Eggs, potatoes, sausage & cheese — perfect North Country breakfast.",
+        image: "images/breakfast.jpg",
+        file: "recipe-breakfast.html",
+        mood: ["Tired"],
+        time: ["Normal"],
+        craving: ["Comfort"]
+    }
+];
+
+let answers = {};
+let currentQuestion = 0;
+
 const questions = [
     { q: "How are you feeling right now?", options: ["Hangry 😡", "Tired 😴", "Chill 😌", "Adventurous 🔥"], key: "mood" },
-    { q: "How much time do you have to eat?", options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook a bit"], key: "time" },
+    { q: "How much time do you have?", options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook a bit"], key: "time" },
     { q: "What are you craving?", options: ["Savory", "Comfort Food", "Pasta", "Something Healthy"], key: "craving" },
     { q: "Any dietary preference?", options: ["No restrictions", "Vegetarian"], key: "diet" }
 ];
-
-let currentQuestion = 0;
 
 function renderQuestion() {
     const q = questions[currentQuestion];
@@ -100,6 +188,7 @@ function renderQuestion() {
 window.selectOption = function(btn, value) {
     document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
+    answers[questions[currentQuestion].key] = value;
     document.getElementById("next-btn").style.display = "block";
 };
 
@@ -108,10 +197,38 @@ document.getElementById("next-btn").addEventListener("click", () => {
     if (currentQuestion < questions.length) {
         renderQuestion();
     } else {
-        document.getElementById("quiz-container").style.display = "none";
-        document.getElementById("results-container").style.display = "block";
+        showRecommendation();
     }
 });
+
+function showRecommendation() {
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("recommendation-container").style.display = "block";
+
+    // Simple scoring to pick best match
+    let bestMeal = meals[0];
+    let bestScore = 0;
+
+    meals.forEach(meal => {
+        let score = 0;
+        if (meal.mood && meal.mood.includes(answers.mood)) score += 2;
+        if (meal.time && meal.time.includes(answers.time)) score += 2;
+        if (meal.craving && meal.craving.includes(answers.craving)) score += 3;
+        if (meal.name.toLowerCase().includes("pasta") && answers.craving === "Pasta") score += 4;
+
+        if (score > bestScore) {
+            bestScore = score;
+            bestMeal = meal;
+        }
+    });
+
+    // Display the recommended meal
+    document.getElementById("meal-image").src = bestMeal.image;
+    document.getElementById("meal-name").textContent = bestMeal.name;
+    document.getElementById("meal-tags").textContent = bestMeal.tags;
+    document.getElementById("meal-desc").textContent = bestMeal.desc;
+    document.getElementById("view-recipe-btn").href = bestMeal.file;
+}
 
 // Mobile Menu
 document.getElementById("menu-toggle").addEventListener("click", () => {
