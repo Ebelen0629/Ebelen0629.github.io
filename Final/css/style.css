@@ -35,7 +35,6 @@ nav {
     color: #ff6b35;
 }
 
-/* Desktop Navigation */
 .nav-links {
     display: flex;
     gap: 1.8rem;
@@ -51,7 +50,6 @@ nav {
     color: #ff6b35;
 }
 
-/* Mobile Hamburger */
 .menu-toggle {
     display: none;
     font-size: 1.9rem;
@@ -98,7 +96,6 @@ nav {
     box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
 }
 
-/* Main Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;

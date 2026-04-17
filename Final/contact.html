@@ -32,18 +32,19 @@
             <form action="https://formsubmit.co/edbelenjr@gmail.com" method="POST">
                 
                 <input type="text" name="name" placeholder="Your Name" required 
-                        style="width:100%; padding:0.9rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
+                      style="width:100%; padding:0.9rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
                 
                 <input type="email" name="email" placeholder="Your Email" required 
-                        style="width:100%; padding:0.9rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
+                      style="width:100%; padding:0.9rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
                 
                 <textarea name="message" placeholder="Your message or food idea..." rows="6" required
                           style="width:100%; padding:0.9rem; margin-bottom:1.5rem; border:1px solid #ddd; border-radius:8px; resize:vertical;"></textarea>
                 
                 <input type="hidden" name="_subject" value="New Message from EatEasy Website!">
-                <input type="hidden" name="_next" value="thankyou.html">   <!-- This is the key line -->
+                <input type="hidden" name="_next" value="thankyou.html">
                 <input type="hidden" name="_captcha" value="false">
-                
+                <input type="hidden" name="_template" value="table">
+
                 <button type="submit" class="btn btn-orange" style="width:100%; padding:1rem;">
                     Send Message
                 </button>
