@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beef Stew | EatEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">EatEasy</div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="random.html">Random Meal</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <a href="recipes.html" style="color:#ff6b35; text-decoration:none;">← Back to Recipes</a>
+    <h1 style="margin:2rem 0 1rem;">Beef Stew</h1>
+    <p><strong>Time:</strong> 45 minutes | <strong>Serves:</strong> 4 | <strong>Difficulty:</strong> Medium</p>
+    
+    <div class="card">
+        <img src="images/stew.jpg" alt="Beef Stew">
+        <div class="card-content">
+            <h3>Ingredients</h3>
+            <ul style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>1.5 lbs beef stew meat</li>
+                <li>4 carrots, chopped</li>
+                <li>4 potatoes, cubed</li>
+                <li>1 onion, chopped</li>
+                <li>4 cups beef broth</li>
+                <li>Salt, pepper, and herbs</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>Brown beef in a large pot.</li>
+                <li>Add onion and cook until soft.</li>
+                <li>Add carrots, potatoes, broth, and seasoning.</li>
+                <li>Simmer for 35-40 minutes until tender.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
+</footer>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => document.getElementById("nav-menu").classList.remove("active"));
+    });
+</script>
+</body>
+</html>

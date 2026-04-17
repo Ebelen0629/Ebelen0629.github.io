@@ -26,7 +26,7 @@
 <div class="hero">
     <div class="container">
         <h1>Feeling Lucky?</h1>
-        <p>Click the button below for a random North Country meal idea!</p>
+        <p>Click below for a random North Country meal idea!</p>
     </div>
 </div>
 
@@ -56,50 +56,19 @@
 </footer>
 
 <script>
-// Meal database
 const meals = [
-    {
-        name: "Classic Philly Cheesesteak",
-        tags: "Quick • Comfort • $$",
-        desc: "Tender beef, melted cheese, peppers & onions on a fresh roll.",
-        image: "images/cheesesteak.jpg",
-        file: "recipe-cheesesteak.html"
-    },
-    {
-        name: "Creamy Garlic Pasta",
-        tags: "Quick • Comfort • $",
-        desc: "Rich garlic cream sauce with parmesan — a cozy North Country favorite.",
-        image: "images/pasta.jpg",
-        file: "recipe-pasta.html"
-    },
-    {
-        name: "North Country Burger",
-        tags: "Comfort • $$",
-        desc: "Juicy burger with cheese and bacon.",
-        image: "images/burger.jpg",
-        file: "recipe-burger.html"
-    },
-    {
-        name: "Pulled Pork Sandwich",
-        tags: "Comfort • $$",
-        desc: "Slow-cooked pulled pork with BBQ sauce and coleslaw.",
-        image: "images/pulledpork.jpg",
-        file: "recipe-pulledpork.html"
-    },
-    {
-        name: "Veggie Stir-Fry Bowl",
-        tags: "Healthy • Quick • $",
-        desc: "Fresh vegetables stir-fried with rice and light sauce.",
-        image: "images/stirfry.jpg",
-        file: "recipe-stirfry.html"
-    },
-    {
-        name: "Breakfast Skillet",
-        tags: "Comfort • $",
-        desc: "Eggs, potatoes, sausage & cheese — perfect North Country breakfast.",
-        image: "images/breakfast.jpg",
-        file: "recipe-breakfast.html"
-    }
+    { name: "Classic Philly Cheesesteak", tags: "Quick • Comfort • $$", desc: "Tender beef, melted cheese, peppers & onions.", image: "images/cheesesteak.jpg", file: "recipe-cheesesteak.html" },
+    { name: "Creamy Garlic Pasta", tags: "Quick • Comfort • $", desc: "Rich garlic cream sauce with parmesan.", image: "images/pasta.jpg", file: "recipe-pasta.html" },
+    { name: "North Country Burger", tags: "Comfort • $$", desc: "Juicy burger with cheese and bacon.", image: "images/burger.jpg", file: "recipe-burger.html" },
+    { name: "Pulled Pork Sandwich", tags: "Comfort • $$", desc: "Slow-cooked pulled pork with BBQ sauce.", image: "images/pulledpork.jpg", file: "recipe-pulledpork.html" },
+    { name: "Veggie Stir-Fry Bowl", tags: "Healthy • Quick • $", desc: "Fresh vegetables stir-fried with rice.", image: "images/stirfry.jpg", file: "recipe-stirfry.html" },
+    { name: "Breakfast Skillet", tags: "Comfort • $", desc: "Eggs, potatoes, sausage & cheese.", image: "images/breakfast.jpg", file: "recipe-breakfast.html" },
+    { name: "Chicken Quesadilla", tags: "Quick • Savory • $", desc: "Cheesy chicken quesadilla with salsa.", image: "images/quesadilla.jpg", file: "recipe-quesadilla.html" },
+    { name: "Beef Stew", tags: "Comfort • $$", desc: "Hearty beef stew with carrots and potatoes.", image: "images/stew.jpg", file: "recipe-stew.html" },
+    { name: "Buffalo Chicken Wrap", tags: "Quick • Spicy • $", desc: "Spicy buffalo chicken with ranch.", image: "images/wrap.jpg", file: "recipe-wrap.html" },
+    { name: "Margherita Flatbread Pizza", tags: "Quick • Comfort • $$", desc: "Fresh mozzarella and basil on flatbread.", image: "images/pizza.jpg", file: "recipe-pizza.html" },
+    { name: "Salmon Rice Bowl", tags: "Healthy • $", desc: "Grilled salmon over rice with avocado.", image: "images/salmon.jpg", file: "recipe-salmon.html" },
+    { name: "Apple Cinnamon Pancakes", tags: "Comfort • $", desc: "Fluffy pancakes with warm apples and cinnamon.", image: "images/pancakes.jpg", file: "recipe-pancakes.html" }
 ];
 
 function getRandomMeal() {
@@ -118,11 +87,8 @@ function getRandomMeal() {
 document.getElementById("menu-toggle").addEventListener("click", () => {
     document.getElementById("nav-menu").classList.toggle("active");
 });
-
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById("nav-menu").classList.remove("active");
-    });
+    link.addEventListener('click', () => document.getElementById("nav-menu").classList.remove("active"));
 });
 </script>
 

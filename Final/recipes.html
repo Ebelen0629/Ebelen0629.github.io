@@ -11,11 +11,9 @@
 <header>
     <nav>
         <div class="logo">EatEasy</div>
-        
         <button class="menu-toggle" id="menu-toggle">☰</button>
-        
         <div class="nav-links" id="nav-menu">
-            <a href="Final.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="random.html">Random Meal</a>
             <a href="recipes.html">Recipes</a>
@@ -27,70 +25,96 @@
 
 <div class="container">
     <h1 style="text-align:center; margin-bottom:2rem;">North Country Recipes</h1>
-    <p style="text-align:center; margin-bottom:3rem;">Simple, tasty meals perfect for Fort Drum and the North Country area.</p>
+    <p style="text-align:center; margin-bottom:3rem;">12 delicious meals perfect for Fort Drum and the North Country.</p>
     
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem;">
-        
-        <!-- Recipe 1 -->
+        <!-- Original 6 -->
         <div class="card">
-            <img src="images/cheesesteak.jpg" alt="Classic Cheesesteak">
+            <img src="images/cheesesteak.jpg" alt="">
             <div class="card-content">
                 <h3>Classic Philly Cheesesteak</h3>
-                <p>Quick • Comfort Food • $$</p>
                 <a href="recipe-cheesesteak.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe 2 -->
         <div class="card">
-            <img src="images/pasta.jpg" alt="Creamy Garlic Pasta">
+            <img src="images/pasta.jpg" alt="">
             <div class="card-content">
                 <h3>Creamy Garlic Pasta</h3>
-                <p>Quick • Comfort • $</p>
                 <a href="recipe-pasta.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe 3 -->
         <div class="card">
-            <img src="images/burger.jpg" alt="North Country Burger">
+            <img src="images/burger.jpg" alt="">
             <div class="card-content">
                 <h3>North Country Burger</h3>
-                <p>Comfort • $$</p>
                 <a href="recipe-burger.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe 4 -->
         <div class="card">
-            <img src="images/pulledpork.jpg" alt="Pulled Pork Sandwich">
+            <img src="images/pulledpork.jpg" alt="">
             <div class="card-content">
                 <h3>Pulled Pork Sandwich</h3>
-                <p>Comfort • $$</p>
                 <a href="recipe-pulledpork.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe 5 -->
         <div class="card">
-            <img src="images/stirfry.jpg" alt="Veggie Stir-Fry">
+            <img src="images/stirfry.jpg" alt="">
             <div class="card-content">
                 <h3>Veggie Stir-Fry Bowl</h3>
-                <p>Healthy • Quick • $</p>
                 <a href="recipe-stirfry.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe 6 -->
         <div class="card">
-            <img src="images/breakfast.jpg" alt="Breakfast Skillet">
+            <img src="images/breakfast.jpg" alt="">
             <div class="card-content">
                 <h3>Breakfast Skillet</h3>
-                <p>Comfort • $</p>
                 <a href="recipe-breakfast.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
 
+        <!-- New 6 -->
+        <div class="card">
+            <img src="images/quesadilla.jpg" alt="">
+            <div class="card-content">
+                <h3>Chicken Quesadilla</h3>
+                <a href="recipe-quesadilla.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/stew.jpg" alt="">
+            <div class="card-content">
+                <h3>Beef Stew</h3>
+                <a href="recipe-stew.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/wrap.jpg" alt="">
+            <div class="card-content">
+                <h3>Buffalo Chicken Wrap</h3>
+                <a href="recipe-wrap.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/pizza.jpg" alt="">
+            <div class="card-content">
+                <h3>Margherita Flatbread Pizza</h3>
+                <a href="recipe-pizza.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/salmon.jpg" alt="">
+            <div class="card-content">
+                <h3>Salmon Rice Bowl</h3>
+                <a href="recipe-salmon.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/pancakes.jpg" alt="">
+            <div class="card-content">
+                <h3>Apple Cinnamon Pancakes</h3>
+                <a href="recipe-pancakes.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -103,11 +127,8 @@
         document.getElementById("nav-menu").classList.toggle("active");
     });
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById("nav-menu").classList.remove("active");
-        });
+        link.addEventListener('click', () => document.getElementById("nav-menu").classList.remove("active"));
     });
 </script>
-
 </body>
 </html>

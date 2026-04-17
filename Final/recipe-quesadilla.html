@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Quesadilla | EatEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">EatEasy</div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="random.html">Random Meal</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <a href="recipes.html" style="color:#ff6b35; text-decoration:none;">← Back to Recipes</a>
+    <h1 style="margin:2rem 0 1rem;">Chicken Quesadilla</h1>
+    <p><strong>Time:</strong> 15 minutes | <strong>Serves:</strong> 2 | <strong>Difficulty:</strong> Easy</p>
+    
+    <div class="card">
+        <img src="images/quesadilla.jpg" alt="Chicken Quesadilla">
+        <div class="card-content">
+            <h3>Ingredients</h3>
+            <ul style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>2 large flour tortillas</li>
+                <li>1 cup cooked chicken, shredded</li>
+                <li>1.5 cups shredded cheese (cheddar or Mexican blend)</li>
+                <li>1/2 bell pepper, diced</li>
+                <li>Salsa and sour cream for serving</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>Heat a skillet over medium heat.</li>
+                <li>Place tortilla down, add cheese, chicken, and peppers.</li>
+                <li>Top with second tortilla and cook until golden.</li>
+                <li>Flip and cook the other side.</li>
+                <li>Cut into wedges and serve with salsa and sour cream.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
+</footer>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => document.getElementById("nav-menu").classList.remove("active"));
+    });
+</script>
+</body>
+</html>

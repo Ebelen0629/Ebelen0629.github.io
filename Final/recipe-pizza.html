@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margherita Flatbread Pizza | EatEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">EatEasy</div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="random.html">Random Meal</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <a href="recipes.html" style="color:#ff6b35; text-decoration:none;">← Back to Recipes</a>
+    <h1 style="margin:2rem 0 1rem;">Margherita Flatbread Pizza</h1>
+    <p><strong>Time:</strong> 15 minutes | <strong>Serves:</strong> 2 | <strong>Difficulty:</strong> Easy</p>
+    
+    <div class="card">
+        <img src="images/pizza.jpg" alt="Margherita Flatbread Pizza">
+        <div class="card-content">
+            <h3>Ingredients</h3>
+            <ul style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>2 flatbreads</li>
+                <li>1 cup marinara sauce</li>
+                <li>8 oz fresh mozzarella</li>
+                <li>Fresh basil leaves</li>
+                <li>Olive oil and salt</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol style="padding-left:1.5rem; margin:1.5rem 0;">
+                <li>Preheat oven to 425°F.</li>
+                <li>Spread sauce on flatbread.</li>
+                <li>Top with torn mozzarella and basil.</li>
+                <li>Drizzle with olive oil and bake 8-10 minutes.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
+</footer>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => document.getElementById("nav-menu").classList.remove("active"));
+    });
+</script>
+</body>
+</html>
