@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +12,12 @@ body {
     background-color: #fffaf5;
 }
 
-/* ==================== HEADER & NAV ==================== */
 header {
     background-color: #333;
     color: white;
     position: sticky;
     top: 0;
-    z-Final: 100;
+    z-index: 100;
 }
 
 nav {
@@ -30,7 +30,7 @@ nav {
 }
 
 .logo {
-    font-size: 2.2rem;           /* Made bigger as requested */
+    font-size: 2.2rem;
     font-weight: bold;
     color: #ff6b35;
 }
@@ -62,9 +62,8 @@ nav {
     padding: 0.5rem;
 }
 
-/* ==================== HERO & ORANGE BACKGROUND ==================== */
 .hero {
-    background-color: #ff6b35;   /* Orange background */
+    background-color: #ff6b35;
     color: white;
     text-align: center;
     padding: 5rem 1rem;
@@ -80,7 +79,6 @@ nav {
     opacity: 0.95;
 }
 
-/* Start Quiz Button - Made to stand out */
 .start-quiz-btn {
     background-color: white;
     color: #ff6b35;
@@ -133,7 +131,6 @@ nav {
     margin-bottom: 0.6rem;
 }
 
-/* Buttons */
 .btn {
     display: inline-block;
     padding: 0.85rem 1.8rem;
@@ -152,7 +149,6 @@ nav {
     background-color: #e65100;
 }
 
-/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -161,7 +157,6 @@ footer {
     margin-top: 4rem;
 }
 
-/* ==================== MOBILE MENU FIX ==================== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -179,7 +174,7 @@ footer {
         justify-content: flex-start;
         padding-top: 3rem;
         transition: left 0.3s ease-in-out;
-        z-Final: 1000;
+        z-index: 1000;
     }
     
     .nav-links.active {
