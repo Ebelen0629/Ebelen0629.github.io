@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | EatEasy</title>
+    <title>EatEasy - Final Project</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,8 +26,9 @@
 <section class="hero">
     <div class="container">
         <h1>Never Decide Alone What to Eat Again!</h1>
-        <p>Answer a few quick questions and get the perfect meal idea</p>
+        <p>Answer a few quick questions and get the perfect meal idea in the North Country</p>
         
+        <!-- Fixed Standout Start Quiz Button -->
         <a href="quiz.html" class="start-quiz-btn">
             Start the Quiz Now
         </a>
@@ -35,7 +36,7 @@
 </section>
 
 <div class="container">
-    <h2 style="text-align:center; margin:3rem 0 2rem;">Popular Meal Ideas</h2>
+    <h2 style="text-align:center; margin:3rem 0 2rem;">Popular Meal Ideas in North Country</h2>
     
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.8rem;">
         <div class="card">
@@ -46,7 +47,6 @@
                 <a href="recipe-cheesesteak.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
         <div class="card">
             <img src="images/pasta.jpg" alt="Garlic Pasta">
             <div class="card-content">
@@ -55,7 +55,6 @@
                 <a href="recipe-pasta.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
         <div class="card">
             <img src="images/burger.jpg" alt="Burger">
             <div class="card-content">
@@ -64,7 +63,6 @@
                 <a href="recipe-burger.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
         <div class="card">
             <img src="images/pulledpork.jpg" alt="Pulled Pork">
             <div class="card-content">
@@ -73,7 +71,6 @@
                 <a href="recipe-pulledpork.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
         <div class="card">
             <img src="images/stirfry.jpg" alt="Stir Fry">
             <div class="card-content">
@@ -82,7 +79,6 @@
                 <a href="recipe-stirfry.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
         <div class="card">
             <img src="images/breakfast.jpg" alt="Breakfast Skillet">
             <div class="card-content">
@@ -99,6 +95,7 @@
 </footer>
 
 <script>
+    // Mobile Menu
     document.getElementById("menu-toggle").addEventListener("click", () => {
         document.getElementById("nav-menu").classList.toggle("active");
     });
