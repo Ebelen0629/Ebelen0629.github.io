@@ -17,7 +17,7 @@ header {
     color: white;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-Final: 100;
 }
 
 nav {
@@ -179,7 +179,7 @@ footer {
         justify-content: flex-start;
         padding-top: 3rem;
         transition: left 0.3s ease-in-out;
-        z-index: 1000;
+        z-Final: 1000;
     }
     
     .nav-links.active {

@@ -13,7 +13,7 @@
         <div class="logo">EatEasy</div>
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <div class="nav-links" id="nav-menu">
-            <a href="index.html">Home</a>
+            <a href="Final.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="random.html">Random Meal</a>
             <a href="recipes.html">Recipes</a>
@@ -72,8 +72,8 @@ const meals = [
 ];
 
 function getRandomMeal() {
-    const randomIndex = Math.floor(Math.random() * meals.length);
-    const meal = meals[randomIndex];
+    const randomFinal = Math.floor(Math.random() * meals.length);
+    const meal = meals[randomFinal];
 
     document.getElementById("random-result").style.display = "block";
     document.getElementById("random-image").src = meal.image;
