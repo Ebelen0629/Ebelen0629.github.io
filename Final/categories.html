@@ -11,12 +11,17 @@
 <header>
     <nav>
         <div class="logo">EatEasy</div>
-        <div class="nav-links">
+        
+        <!-- Hamburger Menu Button (visible only on mobile) -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links" id="nav-menu">
             <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="results.html">Results</a>
             <a href="recipes.html">Recipes</a>
-            <a href="local-eats.html">Philly Spots</a>
+            <a href="local-eats.html">North Country Spots</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -45,6 +50,26 @@
 <footer>
     <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
 </footer>
+
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.remove("active");
+        });
+    });
+    document.addEventListener('click', (e) => {
+        const navMenu = document.getElementById("nav-menu");
+        const toggleBtn = document.getElementById("menu-toggle");
+        if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+            navMenu.classList.remove("active");
+        }
+    });
+</script>
 
 </body>
 </html>

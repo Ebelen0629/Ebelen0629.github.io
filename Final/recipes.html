@@ -11,12 +11,17 @@
 <header>
     <nav>
         <div class="logo">EatEasy</div>
-        <div class="nav-links">
+        
+        <!-- Hamburger Menu Button (visible only on mobile) -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links" id="nav-menu">
             <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="results.html">Results</a>
             <a href="recipes.html">Recipes</a>
-            <a href="local-eats.html">Philly Spots</a>
+            <a href="local-eats.html">North Country Spots</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -24,32 +29,97 @@
 </header>
 
 <div class="container">
-    <h1 style="text-align:center; margin-bottom:2rem;">Simple Recipes</h1>
+    <h1 style="text-align:center; margin-bottom:2rem;">North Country Recipes</h1>
+    <p style="text-align:center; margin-bottom:3rem;">Simple, tasty meals perfect for Fort Drum and the North Country area.</p>
     
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem;">
-        <div class="card">
-            <img src="images/cheesesteak.jpg" alt="">
-            <div class="card-content">
-                <h3>Philly Cheesesteak at Home</h3>
-                <p>15 min • Easy</p>
-                <a href="recipe-detail.html" class="btn btn-orange">View Recipe</a>
-            </div>
-        </div>
         
+        <!-- Recipe 1 -->
         <div class="card">
-            <img src="images/ramen.jpg" alt="">
+            <img src="images/cheesesteak.jpg" alt="Classic Cheesesteak">
             <div class="card-content">
-                <h3>Spicy Ramen Bowl</h3>
-                <p>20 min • Medium</p>
-                <a href="#" class="btn btn-orange">View Recipe</a>
+                <h3>Classic Philly Cheesesteak</h3>
+                <p>Quick • Comfort Food • $$</p>
+                <a href="recipe-cheesesteak.html" class="btn btn-orange">View Full Recipe</a>
             </div>
         </div>
+
+        <!-- Recipe 2 -->
+        <div class="card">
+            <img src="images/pasta.jpg" alt="Creamy Garlic Pasta">
+            <div class="card-content">
+                <h3>Creamy Garlic Pasta</h3>
+                <p>Quick • Comfort • $</p>
+                <a href="recipe-pasta.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+
+        <!-- Recipe 3 -->
+        <div class="card">
+            <img src="images/burger.jpg" alt="North Country Burger">
+            <div class="card-content">
+                <h3>North Country Burger</h3>
+                <p>Comfort • $$</p>
+                <a href="recipe-burger.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+
+        <!-- Recipe 4 -->
+        <div class="card">
+            <img src="images/pulledpork.jpg" alt="Pulled Pork Sandwich">
+            <div class="card-content">
+                <h3>Pulled Pork Sandwich</h3>
+                <p>Comfort • $$</p>
+                <a href="recipe-pulledpork.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+
+        <!-- Recipe 5 -->
+        <div class="card">
+            <img src="images/stirfry.jpg" alt="Veggie Stir-Fry">
+            <div class="card-content">
+                <h3>Veggie Stir-Fry Bowl</h3>
+                <p>Healthy • Quick • $</p>
+                <a href="recipe-stirfry.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+
+        <!-- Recipe 6 -->
+        <div class="card">
+            <img src="images/breakfast.jpg" alt="Breakfast Skillet">
+            <div class="card-content">
+                <h3>Breakfast Skillet</h3>
+                <p>Comfort • $</p>
+                <a href="recipe-breakfast.html" class="btn btn-orange">View Full Recipe</a>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <footer>
     <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY (North Country)</p>
 </footer>
+
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.remove("active");
+        });
+    });
+    document.addEventListener('click', (e) => {
+        const navMenu = document.getElementById("nav-menu");
+        const toggleBtn = document.getElementById("menu-toggle");
+        if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+            navMenu.classList.remove("active");
+        }
+    });
+</script>
 
 </body>
 </html>

@@ -5,13 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz | EatEasy</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .progress { height: 8px; background: #ff6b35; margin-bottom: 2rem; border-radius: 10px; }
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option-btn:hover, .option-btn.selected {
+            border-color: #ff6b35;
+            background: #fffaf5;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <nav>
         <div class="logo">EatEasy</div>
-        <div class="nav-links">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div class="nav-links" id="nav-menu">
             <a href="index.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="results.html">Results</a>
@@ -23,28 +44,21 @@
     </nav>
 </header>
 
-<div class="container" style="max-width:700px; margin-top:3rem;">
-    <h1 style="text-align:center; margin-bottom:2rem;">What Should I Eat in the North Country?</h1>
+<div class="container" style="max-width:720px; margin-top:3rem;">
+    <h1 style="text-align:center; margin-bottom:1rem;">What Should I Eat in the North Country?</h1>
     
     <div id="quiz-container">
+        <div class="progress" id="progress-bar" style="width:25%;"></div>
+        
         <div class="card">
             <div class="card-content">
-                <h3 id="question-text">Question 1 of 4</h3>
-                <p id="question-desc" style="margin:1.5rem 0;"></p>
+                <h3 id="question-text" style="margin-bottom:1.5rem;">Question 1 of 4</h3>
+                <p id="question-desc" style="font-size:1.15rem; margin-bottom:2rem;"></p>
                 
-                <div id="options" style="margin:2rem 0;"></div>
+                <div id="options"></div>
                 
-                <button id="next-btn" class="btn btn-orange" style="width:100%;">Next</button>
+                <button id="next-btn" class="btn btn-orange" style="width:100%; margin-top:2rem; display:none;">Next Question</button>
             </div>
-        </div>
-    </div>
-
-    <div id="results-container" style="display:none;">
-        <h2 style="text-align:center; margin:2rem 0;">Here Are Your Meal Ideas!</h2>
-        <div id="meal-results" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:2rem;"></div>
-        
-        <div style="text-align:center; margin:3rem 0;">
-            <button onclick="restartQuiz()" class="btn btn-orange">Take Quiz Again</button>
         </div>
     </div>
 </div>
@@ -54,121 +68,66 @@
 </footer>
 
 <script>
-// Simple quiz data
+// Quiz Questions
 const questions = [
-    {
-        q: "How are you feeling right now?",
-        options: ["Hangry 😡", "Tired 😴", "Chill 😌", "Adventurous 🔥"],
-        key: "mood"
-    },
-    {
-        q: "How much time do you have?",
-        options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook"],
-        key: "time"
-    },
-    {
-        q: "What are you craving?",
-        options: ["Savory", "Comfort", "Pasta", "Healthy"],
-        key: "craving"
-    },
-    {
-        q: "Any dietary preference?",
-        options: ["No restrictions", "Vegetarian"],
-        key: "diet"
-    }
+    { q: "How are you feeling right now?", options: ["Hangry 😡", "Tired 😴", "Chill 😌", "Adventurous 🔥"], key: "mood" },
+    { q: "How much time do you have?", options: ["Quick (<15 min)", "Normal (15-30 min)", "I can cook"], key: "time" },
+    { q: "What are you craving?", options: ["Savory", "Comfort Food", "Pasta", "Something Healthy"], key: "craving" },
+    { q: "Any dietary preference?", options: ["No restrictions", "Vegetarian"], key: "diet" }
 ];
 
+// Meal Database with links to recipe pages
 const meals = [
-    { name: "Classic Cheesesteak Sub", tags: "Quick • Comfort • $$", desc: "Tender beef, cheese, peppers & onions on a fresh roll.", mood: ["Hangry", "Chill"], time: ["Quick", "Normal"], craving: ["Savory", "Comfort"] },
-    { name: "Creamy Garlic Pasta", tags: "Quick • Comfort • $", desc: "Rich garlic cream sauce with parmesan and herbs.", mood: ["Tired", "Chill"], time: ["Quick", "Normal"], craving: ["Pasta", "Comfort"] },
-    { name: "North Country Burger", tags: "Quick • Comfort • $$", desc: "Juicy burger with cheese, bacon & fries on the side.", mood: ["Hangry", "Adventurous"], time: ["Quick"], craving: ["Savory", "Comfort"] },
-    { name: "Pulled Pork Sandwich", tags: "Comfort • $$", desc: "Slow-cooked pulled pork on a soft bun with coleslaw.", mood: ["Hangry", "Chill"], time: ["Normal"], craving: ["Comfort"] },
-    { name: "Veggie Stir-Fry Bowl", tags: "Healthy • Quick • $", desc: "Fresh veggies, rice & light sauce.", mood: ["Chill"], time: ["Quick"], craving: ["Healthy"], diet: ["Vegetarian"] },
-    { name: "Breakfast Skillet", tags: "Comfort • $", desc: "Eggs, potatoes, sausage & cheese — North Country style.", mood: ["Tired"], time: ["Normal"], craving: ["Comfort"] }
+    { name: "Classic Philly Cheesesteak", file: "recipe-cheesesteak.html", tags: "Quick • Comfort • $$", desc: "Tender beef, melted cheese, peppers & onions on a toasted roll." },
+    { name: "Creamy Garlic Pasta", file: "recipe-pasta.html", tags: "Quick • Comfort • $", desc: "Rich garlic cream sauce with parmesan — a cozy North Country favorite." },
+    { name: "North Country Burger", file: "recipe-burger.html", tags: "Comfort • $$", desc: "Juicy burger with cheese and bacon." },
+    { name: "Pulled Pork Sandwich", file: "recipe-pulledpork.html", tags: "Comfort • $$", desc: "Slow-cooked pulled pork with BBQ sauce." },
+    { name: "Veggie Stir-Fry Bowl", file: "recipe-stirfry.html", tags: "Healthy • Quick • $", desc: "Fresh vegetables stir-fried with rice." },
+    { name: "Breakfast Skillet", file: "recipe-breakfast.html", tags: "Comfort • $", desc: "Eggs, potatoes, sausage & cheese." }
 ];
 
 let answers = {};
 let currentQuestion = 0;
 
-// Render current question
 function renderQuestion() {
     const q = questions[currentQuestion];
     document.getElementById("question-text").textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
     document.getElementById("question-desc").textContent = q.q;
     
-    const optionsHTML = q.options.map(opt => `
-        <label style="display:block; margin:12px 0; font-size:1.1rem;">
-            <input type="radio" name="answer" value="${opt}" style="margin-right:10px;"> ${opt}
-        </label>
-    `).join('');
-    
-    document.getElementById("options").innerHTML = optionsHTML;
-}
-
-// Get selected answer
-function getSelected() {
-    const selected = document.querySelector('input[name="answer"]:checked');
-    return selected ? selected.value : null;
-}
-
-// Show results
-function showResults() {
-    document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("results-container").style.display = "block";
-    
-    const matches = meals.filter(meal => {
-        let score = 0;
-        if (meal.mood && meal.mood.includes(answers.mood)) score++;
-        if (meal.time && meal.time.includes(answers.time)) score++;
-        if (meal.craving && meal.craving.includes(answers.craving)) score++;
-        if (meal.diet && answers.diet === "Vegetarian" && meal.diet.includes("Vegetarian")) score++;
-        return score >= 2;
-    });
-
-    // Show at least 2 meals
-    const finalMeals = matches.length >= 2 ? matches : meals.slice(0, 3);
-    
     let html = '';
-    finalMeals.forEach(meal => {
-        html += `
-        <div class="card">
-            <div class="card-content">
-                <h3>${meal.name}</h3>
-                <p><strong>${meal.tags}</strong></p>
-                <p>${meal.desc}</p>
-                <a href="results.html" class="btn btn-orange">See Full Idea</a>
-            </div>
-        </div>`;
+    q.options.forEach(opt => {
+        html += `<button class="option-btn" onclick="selectOption(this, '${opt}')">${opt}</button>`;
     });
+    document.getElementById("options").innerHTML = html;
     
-    document.getElementById("meal-results").innerHTML = html;
+    document.getElementById("next-btn").style.display = "none";
+    document.getElementById("progress-bar").style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
 }
 
-function restartQuiz() {
-    answers = {};
-    currentQuestion = 0;
-    document.getElementById("quiz-container").style.display = "block";
-    document.getElementById("results-container").style.display = "none";
-    renderQuestion();
-}
+window.selectOption = function(btn, value) {
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    answers[questions[currentQuestion].key] = value;
+    document.getElementById("next-btn").style.display = "block";
+};
 
-// Next button logic
 document.getElementById("next-btn").addEventListener("click", () => {
-    const answer = getSelected();
-    if (!answer) {
-        alert("Please select an answer!");
-        return;
-    }
-    
-    answers[questions[currentQuestion].key] = answer;
     currentQuestion++;
-    
     if (currentQuestion < questions.length) {
         renderQuestion();
     } else {
-        showResults();
+        // Pass answers to results page using URL parameters
+        const params = new URLSearchParams(answers);
+        window.location.href = `results.html?${params.toString()}`;
     }
 });
+
+// Mobile Menu
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+}
+
+document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 
 // Start the quiz
 renderQuestion();
