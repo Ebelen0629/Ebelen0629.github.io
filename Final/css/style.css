@@ -11,47 +11,7 @@ body {
     background-color: #fffaf5;
 }
 
-@media (min-width: 1025px) {
-    body {
-        background-color: #fffaf5;
-        font-family: Arial, sans-serif;
-    }
-    .hero {
-        background-color: #ff6b35;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        background-color: #a0d8ff;
-        font-family: "Arial Black", sans-serif;
-    }
-    .hero {
-        background-color: #0066cc;
-    }
-    .logo {
-        font-size: 2.6rem;
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        background-color: #ff9999;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-    }
-    .hero {
-        background-color: #cc0000;
-        padding: 3rem 1rem;
-    }
-    .logo {
-        font-size: 2rem;
-    }
-    .start-quiz-btn {
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
-}
-
+/* Header */
 header {
     background-color: #333;
     color: white;
@@ -70,11 +30,12 @@ nav {
 }
 
 .logo {
-    font-size: 2.3rem;
+    font-size: 2.3rem;        /* Bigger logo */
     font-weight: bold;
     color: #ff6b35;
 }
 
+/* Desktop nav */
 .nav-links {
     display: flex;
     gap: 1.8rem;
@@ -86,6 +47,11 @@ nav {
     font-weight: 500;
 }
 
+.nav-links a:hover {
+    color: #ff6b35;
+}
+
+/* Mobile hamburger */
 .menu-toggle {
     display: none;
     font-size: 1.9rem;
@@ -95,7 +61,9 @@ nav {
     cursor: pointer;
 }
 
+/* Hero with orange */
 .hero {
+    background-color: #ff6b35;
     color: white;
     text-align: center;
     padding: 5rem 1rem;
@@ -104,6 +72,30 @@ nav {
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 0.8rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+}
+
+/* Standout Start Quiz Button */
+.start-quiz-btn {
+    background-color: white;
+    color: #ff6b35;
+    font-size: 1.25rem;
+    padding: 1.1rem 3rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    transition: all 0.3s;
+}
+
+.start-quiz-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
 }
 
 .container {
@@ -117,6 +109,11 @@ nav {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .card img {
@@ -125,12 +122,22 @@ nav {
     object-fit: cover;
 }
 
+.card-content {
+    padding: 1.6rem;
+}
+
+.card h3 {
+    color: #ff6b35;
+    margin-bottom: 0.6rem;
+}
+
 .btn {
     display: inline-block;
     padding: 0.85rem 1.8rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
+    margin: 0.4rem 0.4rem 0 0;
 }
 
 .btn-orange {
@@ -138,14 +145,11 @@ nav {
     color: white;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 2.2rem 1rem;
-    margin-top: 4rem;
+.btn-orange:hover {
+    background-color: #e65100;
 }
 
+/* Mobile Menu */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
     
@@ -171,5 +175,52 @@ footer {
     .nav-links a {
         margin: 1.2rem 0;
         font-size: 1.35rem;
+    }
+    
+    .hero h1 { font-size: 2.2rem; }
+    .container { padding: 1.5rem; }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2.2rem 1rem;
+    margin-top: 4rem;
+}
+
+/* HW8 Requirements */
+
+/* 1. Mobile - Small Screen (< 600px) */
+@media (max-width: 600px) {
+    body {
+        background-color: #ff6666 !important;
+        font-family: "Comic Sans MS", cursive, sans-serif !important;
+    }
+    .hero {
+        background-color: #cc0000 !important;
+    }
+}
+
+/* 2. Tablet - Medium Screen (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: #66b3ff !important;
+        font-family: "Arial Black", sans-serif !important;
+    }
+    .hero {
+        background-color: #0066cc !important;
+    }
+}
+
+/* 3. Desktop - Large Screen (> 1024px) */
+@media (min-width: 1025px) {
+    body {
+        background-color: #fffaf5 !important;
+        font-family: Arial, sans-serif !important;
+    }
+    .hero {
+        background-color: #ff6b35 !important;
     }
 }
