@@ -11,13 +11,9 @@
 <header>
     <nav>
         <div class="logo">EatEasy</div>
-        
-        <!-- Hamburger Menu Button (visible only on mobile) -->
         <button class="menu-toggle" id="menu-toggle">☰</button>
-        
-        <!-- Navigation Links -->
         <div class="nav-links" id="nav-menu">
-            <a href="index.html">Home</a>
+            <a href="Final.html">Home</a>
             <a href="quiz.html">Quiz</a>
             <a href="results.html">Results</a>
             <a href="recipes.html">Recipes</a>
@@ -32,23 +28,24 @@
     <div class="container">
         <h1>Never Decide Alone What to Eat Again!</h1>
         <p>Answer a few quick questions and get the perfect meal idea in the North Country</p>
-        <a href="quiz.html" class="btn btn-orange" style="font-size:1.2rem; padding:1rem 3rem; margin-top:2rem;">
+        
+        <!-- Standout Start Quiz Button -->
+        <a href="quiz.html" class="start-quiz-btn">
             Start the Quiz Now
         </a>
     </div>
 </section>
 
 <div class="container">
-    <h2 style="text-align:center; margin:3rem 0 2rem;">Popular Meal Ideas</h2>
+    <h2 style="text-align:center; margin:3rem 0 2rem;">Popular Meal Ideas in North Country</h2>
     
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.8rem;">
-        
         <div class="card">
             <img src="images/cheesesteak.jpg" alt="Cheesesteak">
             <div class="card-content">
                 <h3>Classic Philly Cheesesteak</h3>
                 <p>Quick • Comfort • $$</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-cheesesteak.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
 
@@ -57,7 +54,7 @@
             <div class="card-content">
                 <h3>Creamy Garlic Pasta</h3>
                 <p>Quick • Comfort • $</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-pasta.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
 
@@ -66,7 +63,7 @@
             <div class="card-content">
                 <h3>North Country Burger</h3>
                 <p>Comfort • $$</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-burger.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
 
@@ -75,7 +72,7 @@
             <div class="card-content">
                 <h3>Pulled Pork Sandwich</h3>
                 <p>Comfort • $$</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-pulledpork.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
 
@@ -84,7 +81,7 @@
             <div class="card-content">
                 <h3>Veggie Stir-Fry Bowl</h3>
                 <p>Healthy • Quick • $</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-stirfry.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
 
@@ -93,10 +90,9 @@
             <div class="card-content">
                 <h3>Breakfast Skillet</h3>
                 <p>Comfort • $</p>
-                <a href="recipes.html" class="btn btn-orange">View Recipe</a>
+                <a href="recipe-breakfast.html" class="btn btn-orange">View Recipe</a>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -105,22 +101,16 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        const navMenu = document.getElementById("nav-menu");
-        navMenu.classList.toggle("active");
-    }
+    // Mobile Menu Toggle
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            const navMenu = document.getElementById("nav-menu");
-            navMenu.classList.remove("active");
+            document.getElementById("nav-menu").classList.remove("active");
         });
-    });
-    document.addEventListener('click', (e) => {
-        const navMenu = document.getElementById("nav-menu");
-        const toggleBtn = document.getElementById("menu-toggle");
-        if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-            navMenu.classList.remove("active");
-        }
     });
 </script>
 
