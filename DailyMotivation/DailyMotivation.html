@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation is Free</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Motivation is Free</h1>
+        </div>
+        
+        <div class="content">
+            <button onclick="generateQuote()">Motivate Yourself</button>
+
+            <div id="quoteArea" class="quote-area">
+                <div class="quote" id="quoteText"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            False motivation is still motivation
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do.",
+            "Every day may not be good, but there's something good in every day.",
+            "You are stronger than you think, braver than you believe, and smarter than you know.",
+            "Small steps every day lead to massive results.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "You've survived 100% of your worst days so far. You're doing great.",
+            "Be the reason someone smiles today.",
+            "Progress, not perfection.",
+            "Your only limit is you.",
+            "Difficult roads often lead to beautiful destinations.",
+            "Believe you can and you're halfway there.",
+            "The best way to predict the future is to create it.",
+            "Work hard in silence, let your success be your noise.",
+            "When you feel like quitting, think about why you started.",
+            "The distance between dreams and reality is called action.",
+            "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "Everything you’ve ever wanted is sitting on the other side of fear.",
+            "Don’t watch the clock; do what it does. Keep going.",
+            "The only impossible journey is the one you never begin.",
+            "Fall seven times and stand up eight.",
+            "It is never too late to be what you might have been.",
+            "Happiness is not something ready-made. It comes from your own actions.",
+            "The secret of getting ahead is getting started.",
+            "You miss 100% of the shots you don’t take.",
+            "Strive for progress, not perfection.",
+            "A comfort zone is a beautiful place, but nothing ever grows there.",
+            "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+            "The harder you work for something, the greater you’ll feel when you achieve it.",
+            "Dream big and dare to fail.",
+            "Don’t wait for opportunity. Create it.",
+            "Be yourself; everyone else is already taken.",
+            "The only person you are destined to become is the person you decide to be.",
+            "Stay afraid, but do it anyway.",
+            "Nothing is impossible. The word itself says 'I’m possible!'"
+        ];
+
+        function generateQuote() {
+            const quoteArea = document.getElementById('quoteArea');
+            const quoteText = document.getElementById('quoteText');
+
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const selected = quotes[randomIndex];
+
+            quoteText.textContent = `"${selected}"`;
+            quoteArea.style.display = 'block';
+        }
+        window.onload = generateQuote;
+    </script>
+</body>
+</html>
