@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy GPA Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+<body> 
+  <header>
+    <!--repeated top of page info-->
+    <h1>A Basic GPA Calculator</h1>
+    <h2>Calculating your <abbr title="Grade Point Average">GPA</abbr> has <em>never</em> been easier</h2>
+  </header>
+  <main>
+    <!--main content goes here-->
+    <p>
+      This is a <strong>basic code</strong> that can help calculate your 
+      <abbr title="Grade Point Average">GPA</abbr> based on <mark>two classes</mark>. You can modify the code
+      to add more classes as needed.
+    </p>
+    <blockquote>
+      <p><q>Education is not measured by a single test, but by the careful accumulation of knowledge and effort. Every grade is a testament to one's commitment to excellence.</q></p>
+      <footer>— <cite>The Scholars' Path: A Novel of Academic Achievement</cite> by Eleanor Hartwell</footer>
+    </blockquote>
+    <div>
+      <h3><abbr title="Grade Point Average">GPA</abbr> Calculation Code:</h3>
+    </div>
+      <pre> 
+        <code>
+        <var>char name [50];</var>
+        <var>char semester [50];</var>
+
+        char cName1[50];
+        char cName2[50];
+
+        double c1Hours;
+        double c2Hours;
+
+        double c1Weight;
+        double c2Weight;
+
+        float totalAttemptedHours;
+        float totalQualityPoints;
+        float gPa;
+
+        totalAttemptedHours = c1Hours + c2Hours;
+        totalQualityPoints = (c1Hours * c1Weight)+(c2Hours * c2Weight);
+        <var>gPa</var> = totalQualityPoints / totalAttemptedHours;
+
+        <samp>cout << "Total Attempted Hours: " << totalAttemptedHours << endl;</samp>
+        <samp>cout << "Total Quality Points: " << totalQualityPoints << endl;</samp>
+        <samp>cout << "GPA: " << gPa << endl;</samp>
+        </code>
+      </pre>
+      <cite>An easy to use GPA Calculator</cite>
+  <p>    
+  </main>
+  <footer>
+    <!--repeated bottom of page content goes here-->
+  <p><small>Created on <time datetime="2026-02-05">February 5th, 2026</time></small></p>  
+  </footer>
+</body>
+</html>
