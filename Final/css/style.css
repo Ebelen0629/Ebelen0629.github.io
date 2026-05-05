@@ -90,7 +90,8 @@ nav {
 
 .start-quiz-btn:hover {
     transform: scale(1.08);
-    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+    background-color: #cc4400;
+
 }
 
 .container {
