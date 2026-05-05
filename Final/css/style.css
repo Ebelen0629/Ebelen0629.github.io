@@ -75,6 +75,30 @@ nav {
     font-size: 1.3rem;
 }
 
+.progress { 
+    height: 8px; 
+    background: #ff6b35; 
+    margin-bottom: 2rem; 
+    border-radius: 10px; 
+}
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.8rem 0;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.option-btn:hover, .option-btn.selected {
+    border-color: #ff6b35;
+    background: #fffaf5;
+}
+
 .start-quiz-btn {
     background-color: #333;
     color: #ffffff;
