@@ -76,7 +76,7 @@ nav {
 }
 
 .start-quiz-btn {
-    background-color: #333;
+    background-color: #ffffff;
     color: #e65100;
     font-size: 1.25rem;
     padding: 1.1rem 3rem;
@@ -135,7 +135,7 @@ nav {
 
 .btn-orange {
     background-color: #e65100;
-    color: #333;
+    color: #ffffff;
 }
 
 .btn-orange:hover {
