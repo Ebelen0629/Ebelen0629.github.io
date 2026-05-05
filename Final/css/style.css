@@ -61,7 +61,7 @@ nav {
 
 .hero {
     background-color: #e65100;       
-    color: white;
+    color: #333;
     text-align: center;
     padding: 5rem 1rem;
 }
@@ -78,7 +78,7 @@ nav {
 }
 
 .start-quiz-btn {
-    background-color: white;
+    background-color: #333;
     color: #e65100;
     font-size: 1.25rem;
     padding: 1.1rem 3rem;
@@ -137,7 +137,7 @@ nav {
 
 .btn-orange {
     background-color: #e65100;
-    color: white;
+    color: #333;
 }
 
 .btn-orange:hover {
