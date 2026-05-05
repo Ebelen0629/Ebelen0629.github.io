@@ -60,7 +60,7 @@ nav {
 
 
 .hero {
-    background-color: #e65100;       
+    background-color: #ffffff;       
     color: #333;
     text-align: center;
     padding: 5rem 1rem;
@@ -77,7 +77,7 @@ nav {
 
 .start-quiz-btn {
     background-color: #ffffff;
-    color: #e65100;
+    color: #333;
     font-size: 1.25rem;
     padding: 1.1rem 3rem;
     border-radius: 50px;
@@ -102,7 +102,7 @@ nav {
 }
 
 .card {
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
