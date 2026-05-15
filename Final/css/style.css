@@ -114,7 +114,24 @@ nav {
 .start-quiz-btn:hover {
     transform: scale(1.08);
     background-color: #cc4400;
+}
 
+.start-games-btn {
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1.25rem;
+    padding: 1.1rem 3rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    transition: all 0.3s;
+}
+
+.start-games-btn:hover {
+    transform: scale(1.08);
+    background-color: #cc4400;
 }
 
 .container {
