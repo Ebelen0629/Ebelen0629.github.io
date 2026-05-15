@@ -58,7 +58,6 @@ nav {
     cursor: pointer;
 }
 
-
 .hero {
     background-color: #ffffff;       
     color: #333;
@@ -199,7 +198,7 @@ footer {
     margin-top: 4rem;
 }
 
-/* 1. Mobile - Small Screen (< 600px) */
+/* Mobile - Small Screen (< 600px) */
 @media (max-width: 600px) {
     body {
         background-color: #ff6666 !important;
@@ -210,7 +209,7 @@ footer {
     }
 }
 
-/* 2. Tablet - Medium Screen (601px - 1024px) */
+/* Tablet - Medium Screen (601px - 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
         background-color: #66b3ff !important;
@@ -218,16 +217,5 @@ footer {
     }
     .hero {
         background-color: #0066cc !important;
-    }
-}
-
-/* 3. Desktop - Large Screen (> 1024px) */
-@media (min-width: 1025px) {
-    body {
-        background-color: #fffaf5 !important;
-        font-family: Arial, sans-serif !important;
-    }
-    .hero {
-        background-color: #ff6b35 !important;
     }
 }
