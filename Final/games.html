@@ -6,7 +6,14 @@
     <title>Games | EatEasy</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .game-container { margin: 3rem 0; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .game-container { 
+            margin: 3rem 0; 
+            padding: 2rem; 
+            background: white; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); 
+        }
+
         .reaction-box {
             width: 100%;
             height: 280px;
@@ -52,7 +59,7 @@
             <div id="ttt-board" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 420px; margin: 20px auto;"></div>
             <div style="text-align:center;">
                 <button id="ttt-reset" class="btn btn-orange">New Game</button>
-                <p id="ttt-status" style="margin-top: 1rem; font-size: 1.35rem; font-weight: bold;"></p>
+                <h3 id="ttt-status" style="margin-top: 1rem; font-size: 1.35rem; font-weight: bold;"></h3>
             </div>
         </div>
 
@@ -68,7 +75,7 @@
 
             <div style="text-align:center;">
                 <button id="start-reaction" class="btn btn-orange">Start Game</button>
-                <p id="reaction-result" style="margin-top: 1.5rem; font-size: 1.4rem; font-weight: bold; min-height: 50px;"></p>
+                <h3 id="reaction-result" style="margin-top: 1.5rem; font-size: 1.4rem; font-weight: bold; min-height: 50px;"></h3>
             </div>
         </div>
 
@@ -76,11 +83,11 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 EatEasy - Solving Food Indecision in Fort Drum, NY</p>
+    <p>&copy; 2026 EatEasy - Solving Food Indecision</p>
 </footer>
 
 <script>
-// ==================== TIC TAC TOE ====================
+// TIC TAC TOE GAME
 let tttState = Array(9).fill('');
 let tttPlayer = 'X';
 let tttActive = true;
@@ -91,7 +98,18 @@ function createTTT() {
     tttBoard.innerHTML = '';
     tttState.forEach((_, i) => {
         const cell = document.createElement('div');
-        cell.style.cssText = `height: 130px; background:white; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:3.8rem; font-weight:bold; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.1);`;
+        cell.style.cssText = 
+        `height: 130px; 
+        background:white; 
+        border-radius:12px; 
+        display:flex; 
+        align-items:center; 
+        justify-content:center; 
+        font-size:3.8rem; 
+        font-weight:bold; 
+        cursor:pointer; 
+        box-shadow:0 4px 15px rgba(0,0,0,0.1);`;
+
         cell.dataset.index = i;
         cell.addEventListener('click', () => tttClick(i));
         tttBoard.appendChild(cell);
@@ -130,7 +148,7 @@ document.getElementById('ttt-reset').addEventListener('click', () => {
     createTTT();
 });
 
-// ==================== REACTION TIME GAME ====================
+// REACTION TIME GAME
 let reactionTimeout;
 let startTime;
 const reactionBox = document.getElementById('reaction-box');
